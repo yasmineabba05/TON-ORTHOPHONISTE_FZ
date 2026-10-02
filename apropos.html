@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'orthophoniste — Les Petits Mots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="apropos.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <script>
+      // Écran de chargement : affiché une seule fois, à l'ouverture du site (visite en cours)
+      try {
+        if (!sessionStorage.getItem("loadingShown")) {
+          window.location.replace("loading.html?next=" + location.pathname.split("/").pop());
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo"><span class="dot"></span>Les Petits Mots</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="accompagnements.html">Ce que nous travaillons</a></li>
+          <li><a href="apropos.html" class="active">L'orthophoniste</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="contact.html" class="nav-cta-mobile">Rendez-vous</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="contact.html" class="nav-cta">Rendez-vous</a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO / PRESENTATION -->
+      <section class="page-hero">
+        <div class="container hero-grid">
+          <div class="portrait">
+            <img src="orthophoniste.jpeg" alt="Orthophoniste" class="doctor-image" />
+          </div>
+          <div>
+            <div class="eyebrow"><span>👋</span> À propos</div>
+            <h1>Bonjour, je suis BENMLIH FATIMA ZAHRA</h1>
+            <p class="role">Orthophoniste diplômée</p>
+            <p class="lead">
+              J'accompagne les enfants et leurs familles avec écoute et bonne humeur depuis [X] ans.
+              Mon objectif : que chaque petit patient reparte du cabinet avec le sourire, un peu
+              plus sûr de sa voix.
+            </p>
+            <p class="lead">
+              Je crois qu'on progresse mieux en jouant : mes séances mêlent jeux, histoires et
+              petites victoires du quotidien, à hauteur d'enfant.
+            </p>
+            <div class="tags">
+              <span>🎓 Diplômée </span>
+              <span>🧸 Approche ludique</span>
+              <span>💛 À l'écoute des familles</span>
+              <span>🏥 Conventionnée</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARCOURS -->
+      <section id="parcours">
+        <div class="container">
+          <div class="section-head">
+            <h2>Mon parcours</h2>
+            <p>Quelques étapes qui ont construit ma façon d'accompagner les enfants aujourd'hui.</p>
+          </div>
+          <div class="path">
+            <div class="path-item">
+              <div class="path-dot">🎓</div>
+              <div class="path-year">20XX</div>
+              <h3>Diplôme d'orthophoniste</h3>
+              <p>
+                Formation complète en sciences du langage, avec une spécialisation sur
+                l'accompagnement des enfants depuis 5 ans.
+              </p>
+            </div>
+            <div class="path-item">
+              <div class="path-dot">🏥</div>
+              <div class="path-year">20XX — 20XX</div>
+              <h3>Premières années en cabinet partagé</h3>
+              <p>
+                Un temps précieux pour affiner mon approche au contact de collègues expérimentés et
+                de nombreuses familles.
+              </p>
+            </div>
+            <div class="path-item">
+              <div class="path-dot">🧩</div>
+              <div class="path-year">20XX</div>
+              <h3>Formation continue en approche ludique</h3>
+              <p>
+                Des formations complémentaires pour intégrer davantage le jeu et la créativité dans
+                le suivi orthophonique.
+              </p>
+            </div>
+            <div class="path-item">
+              <div class="path-dot">🐰</div>
+              <div class="path-year">Aujourd'hui</div>
+              <h3>Ouverture du cabinet Les Petits Mots</h3>
+              <p>
+                Un espace pensé comme un cocon, où chaque enfant peut avancer à son rythme, sans
+                pression ni jugement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROCHE / VALEURS -->
+      <section id="approche">
+        <div class="container values-bg" style="padding: 60px 40px">
+          <div class="section-head">
+            <h2>Mon approche en 3 mots</h2>
+            <p>Ce qui guide chaque séance, quel que soit l'âge ou la difficulté de l'enfant.</p>
+          </div>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon">🧸</div>
+              <h3>Le jeu avant tout</h3>
+              <p>
+                On progresse mieux quand on ne se rend pas compte qu'on travaille. Chaque exercice
+                est déguisé en jeu.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">💛</div>
+              <h3>Zéro pression</h3>
+              <p>
+                Pas de comparaison, pas de note. Chaque enfant avance à son propre rythme, on
+                célèbre chaque petit progrès.
+              </p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🤝</div>
+              <h3>Avec les familles</h3>
+              <p>
+                Les parents sont de vrais partenaires du suivi : explications claires et points
+                réguliers sur les avancées.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CITATION -->
+      <section id="citation">
+        <div class="container">
+          <div class="quote-block">
+            <span class="mark">"</span>
+            <p>
+              Chaque enfant a déjà les mots en lui. Mon travail, c'est de l'aider à les trouver et
+              surtout à oser les dire.
+            </p>
+            <span>— Fatima Zahra, orthophoniste</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col" style="max-width: 280px">
+            <h4 style="font-size: 1.15rem">Les Petits Mots 🐰</h4>
+            <p>Cabinet d'orthophonie pour enfants, un espace doux pour apprendre à s'exprimer.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Cabinet</h4>
+            <a href="index.html">Accueil</a>
+            <a href="accompagnements.html">Ce que nous travaillons</a>
+            <a href="apropos.html">L'orthophoniste</a>
+            <a href="avis.html">Avis</a>
+            <a href="contact.html">Rendez-vous</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/212783083330" target="_blank" rel="noopener noreferrer">
+              +212 783-083330
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:benmlihfzfz@gmail.com">benmlihfzfz@gmail.com</a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/ton_orthophoniste_fz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              style="
+                display: inline-flex;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: #ffd8e4;
+                align-items: center;
+                justify-content: center;
+                color: #5b4258;
+                margin-top: 10px;
+              "
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.248.637.416 1.363.465 2.428.05 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.248-1.363.416-2.428.465-1.066.05-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.637-.248 1.363-.416 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.567.684-.748 1.15-.137.353-.3.882-.344 1.858-.05 1.054-.06 1.37-.06 4.04 0 2.67.01 2.986.06 4.04.045.976.207 1.505.344 1.858.181.466.398.8.748 1.15.35.35.684.567 1.15.748.353.137.882.3 1.858.344 1.054.05 1.37.06 4.04.06 2.67 0 2.987-.01 4.04-.06.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.567-.684.748-1.15.137-.353.3-.882.344-1.858.05-1.054.06-1.37.06-4.04 0-2.67-.01-2.986-.06-4.04-.045-.976-.207-1.505-.344-1.858a3.09 3.09 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.858-.344-1.053-.05-1.37-.059-4.04-.059zm0 4.594a5.604 5.604 0 1 1 0 11.208 5.604 5.604 0 0 1 0-11.208zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5.844-9.884a1.31 1.31 0 1 1-2.62 0 1.31 1.31 0 0 1 2.62 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Les Petits Mots — tous droits réservés</span>
+          <span>Fait avec 💛 pour les petites voix</span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      function fermerMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      }
+
+      function ouvrirMenu() {
+        navLinks.classList.add("open");
+        menuToggle.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Fermer le menu");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        if (navLinks.classList.contains("open")) {
+          fermerMenu();
+        } else {
+          ouvrirMenu();
+        }
+      });
+
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", fermerMenu);
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          fermerMenu();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) {
+          fermerMenu();
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

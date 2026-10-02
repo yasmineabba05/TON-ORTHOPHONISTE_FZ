@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avis des familles — Les Petits Mots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="avis.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <script>
+      // Écran de chargement : affiché une seule fois, à l'ouverture du site (visite en cours)
+      try {
+        if (!sessionStorage.getItem("loadingShown")) {
+          window.location.replace("loading.html?next=" + location.pathname.split("/").pop());
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo"><span class="dot"></span>Les Petits Mots</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="accompagnements.html">Ce que nous travaillons</a></li>
+          <li><a href="apropos.html">L'orthophoniste</a></li>
+          <li><a href="avis.html" class="active">Avis</a></li>
+          <li><a href="contact.html" class="nav-cta-mobile">Rendez-vous</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="contact.html" class="nav-cta">Rendez-vous</a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow"><span>💬</span> Paroles de familles</div>
+          <h1>Ce que <span class="swirl">disent</span> les familles</h1>
+          <p>
+            Le meilleur retour, c'est un enfant qui a hâte de venir à sa séance. Merci à toutes les
+            familles qui prennent le temps de partager leur expérience.
+          </p>
+
+          <div class="score-row">
+            <div class="score-pill">
+              <span class="num" id="avg-score">4,9/5</span>
+              <span class="stars">★★★★★</span>
+              <span class="count" id="review-count">· 120 avis</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVIS EXISTANTS -->
+      <section id="temoignages">
+        <div class="container">
+          <div class="section-head">
+            <h2>Derniers avis</h2>
+            <p>Une sélection de retours laissés par les parents.</p>
+          </div>
+
+          <div class="reviews-grid" id="reviews-grid">
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--pink)">Y</div>
+                <div>
+                  <div class="review-name">Yasmine, maman de Lina</div>
+                  <div class="review-meta">Il y a 2 semaines</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                Ma fille était timide pour parler en classe. Après quelques mois, elle lève la main
+                toute seule !
+              </p>
+              <span class="review-tag">Confiance en soi</span>
+            </div>
+
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--mint); color: #1f4b3a">A</div>
+                <div>
+                  <div class="review-name">Ahmed, papa de Youssef</div>
+                  <div class="review-meta">Il y a 1 mois</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                Un accueil adorable, mon fils demande lui-même quand est le prochain rendez-vous.
+              </p>
+              <span class="review-tag">Articulation</span>
+            </div>
+
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--lavender)">F</div>
+                <div>
+                  <div class="review-name">Fatima, maman de Salma</div>
+                  <div class="review-meta">Il y a 1 mois</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                Beaucoup de douceur et de patience. On sent que chaque enfant est écouté à son
+                rythme.
+              </p>
+              <span class="review-tag">Lecture &amp; écriture</span>
+            </div>
+
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--sun); color: #7a5c14">K</div>
+                <div>
+                  <div class="review-name">Khadija, maman d'Adam</div>
+                  <div class="review-meta">Il y a 2 mois</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                On a mis du temps à consulter par peur du jugement, quelle erreur ! Un cabinet
+                vraiment bienveillant.
+              </p>
+              <span class="review-tag">Langage oral</span>
+            </div>
+
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--pink)">O</div>
+                <div>
+                  <div class="review-name">Omar, papa de Mariam</div>
+                  <div class="review-meta">Il y a 3 mois</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                Les progrès sont visibles rapidement, et les explications entre chaque séance sont
+                très claires.
+              </p>
+              <span class="review-tag">Bégaiement</span>
+            </div>
+
+            <div class="review-card">
+              <div class="review-top">
+                <div class="avatar" style="background: var(--mint); color: #1f4b3a">S</div>
+                <div>
+                  <div class="review-name">Samira, maman de Hamza</div>
+                  <div class="review-meta">Il y a 3 mois</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="body">
+                Mon fils qui détestait lire redemande maintenant ses livres tout seul. Merci
+                infiniment !
+              </p>
+              <span class="review-tag">Lecture &amp; écriture</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULAIRE : LAISSER UN AVIS -->
+      <section id="laisser-avis">
+        <div class="container form-bg" style="padding: 60px 24px">
+          <div class="review-form-wrap">
+            <h2>Votre expérience compte 🌸</h2>
+            <p class="sub">
+              Vous avez consulté au cabinet ? Partagez votre avis pour aider d'autres familles.
+            </p>
+
+            <form id="review-form" novalidate>
+              <fieldset style="border: none">
+                <div class="star-picker" role="radiogroup" aria-label="Votre note">
+                  <input type="radio" name="note" id="n1" value="1" />
+                  <label for="n1" title="1 étoile">★</label>
+                  <input type="radio" name="note" id="n2" value="2" />
+                  <label for="n2" title="2 étoiles">★</label>
+                  <input type="radio" name="note" id="n3" value="3" />
+                  <label for="n3" title="3 étoiles">★</label>
+                  <input type="radio" name="note" id="n4" value="4" />
+                  <label for="n4" title="4 étoiles">★</label>
+                  <input type="radio" name="note" id="n5" value="5" checked />
+                  <label for="n5" title="5 étoiles">★</label>
+                </div>
+              </fieldset>
+
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="parent-nom">Votre nom</label>
+                  <input
+                    type="text"
+                    id="parent-nom"
+                    name="parent-nom"
+                    placeholder="Ex. Camille D."
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="field-label" for="enfant-info">Enfant suivi</label>
+                  <input
+                    type="text"
+                    id="enfant-info"
+                    name="enfant-info"
+                    placeholder="Ex. Lina, 6 ans"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="motif">Domaine travaillé</label>
+                <select id="motif" name="motif">
+                  <option value="" disabled selected>Choisissez un domaine</option>
+                  <option>Articulation</option>
+                  <option>Langage oral</option>
+                  <option>Lecture &amp; écriture</option>
+                  <option>Bégaiement</option>
+                  <option>Confiance en soi</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="avis-texte">Votre avis</label>
+                <textarea
+                  id="avis-texte"
+                  name="avis-texte"
+                  placeholder="Racontez votre expérience au cabinet..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Envoyer mon avis 💌</button>
+              <p class="form-note">
+                Votre avis sera publié automatiquement ci-dessus, sur cette page, pour toutes les
+                familles qui la consultent.
+              </p>
+
+              <div class="confirm-msg" id="confirm-msg">
+                <span>🎉</span>
+                <span id="confirm-text">Merci pour votre retour, il vient d'être publié !</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col" style="max-width: 280px">
+            <h4 style="font-size: 1.15rem">Les Petits Mots 🐰</h4>
+            <p>Cabinet d'orthophonie pour enfants, un espace doux pour apprendre à s'exprimer.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Cabinet</h4>
+            <a href="index.html">Accueil</a>
+            <a href="accompagnements.html">Ce que nous travaillons</a>
+            <a href="apropos.html">L'orthophoniste</a>
+            <a href="avis.html">Avis</a>
+            <a href="contact.html">Rendez-vous</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/212783083330" target="_blank" rel="noopener noreferrer">
+              +212 783-083330
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:benmlihfzfz@gmail.com">benmlihfzfz@gmail.com</a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/ton_orthophoniste_fz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              style="
+                display: inline-flex;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: #ffd8e4;
+                align-items: center;
+                justify-content: center;
+                color: #5b4258;
+                margin-top: 10px;
+              "
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.248.637.416 1.363.465 2.428.05 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.248-1.363.416-2.428.465-1.066.05-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.637-.248 1.363-.416 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.567.684-.748 1.15-.137.353-.3.882-.344 1.858-.05 1.054-.06 1.37-.06 4.04 0 2.67.01 2.986.06 4.04.045.976.207 1.505.344 1.858.181.466.398.8.748 1.15.35.35.684.567 1.15.748.353.137.882.3 1.858.344 1.054.05 1.37.06 4.04.06 2.67 0 2.987-.01 4.04-.06.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.567-.684.748-1.15.137-.353.3-.882.344-1.858.05-1.054.06-1.37.06-4.04 0-2.67-.01-2.986-.06-4.04-.045-.976-.207-1.505-.344-1.858a3.09 3.09 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.858-.344-1.053-.05-1.37-.059-4.04-.059zm0 4.594a5.604 5.604 0 1 1 0 11.208 5.604 5.604 0 0 1 0-11.208zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5.844-9.884a1.31 1.31 0 1 1-2.62 0 1.31 1.31 0 0 1 2.62 0z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Les Petits Mots — tous droits réservés</span>
+          <span>Fait avec 💛 pour les petites voix</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      function fermerMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      }
+
+      function ouvrirMenu() {
+        navLinks.classList.add("open");
+        menuToggle.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Fermer le menu");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        if (navLinks.classList.contains("open")) {
+          fermerMenu();
+        } else {
+          ouvrirMenu();
+        }
+      });
+
+      // Ferme le menu quand on clique sur un lien
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", fermerMenu);
+      });
+
+      // Ferme le menu quand on clique en dehors
+      document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          fermerMenu();
+        }
+      });
+
+      // Ferme le menu si on repasse en desktop
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) {
+          fermerMenu();
+        }
+      });
+    </script>
+
+    <script>
+      const form = document.getElementById("review-form");
+      const confirmMsg = document.getElementById("confirm-msg");
+      const confirmText = document.getElementById("confirm-text");
+      const grid = document.getElementById("reviews-grid");
+      const submitBtn = form.querySelector(".submit-btn");
+
+      const NB_AVIS_INITIAUX = 120; // nombre d'avis déjà comptés avant la mise en place du formulaire
+      const NOTE_MOYENNE_INITIALE = 4.9;
+
+      function escapeHTML(str) {
+        const div = document.createElement("div");
+        div.textContent = str || "";
+        return div.innerHTML;
+      }
+
+      function hashCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        return hash;
+      }
+
+      function reviewCardEl(r) {
+        const colors = [
+          { bg: "var(--pink)", fg: "var(--white)" },
+          { bg: "var(--mint)", fg: "#1f4b3a" },
+          { bg: "var(--lavender)", fg: "var(--white)" },
+          { bg: "var(--sun)", fg: "#7a5c14" },
+        ];
+        const idx = Math.abs(hashCode(r.nom || "A")) % colors.length;
+        const initial = (r.nom || "?").trim().charAt(0).toUpperCase() || "?";
+        const stars = "★".repeat(r.note) + "☆".repeat(5 - r.note);
+        const dateStr = new Date(r.date).toLocaleDateString("fr-FR", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "review-card dynamic";
+        wrapper.innerHTML = `
+      <div class="review-top">
+        <div class="avatar" style="background:${colors[idx].bg};color:${colors[idx].fg};">${initial}</div>
+        <div>
+          <div class="review-name">${escapeHTML(r.nom)}${r.enfant ? " — " + escapeHTML(r.enfant) : ""}</div>
+          <div class="review-meta">${dateStr}</div>
+        </div>
+      </div>
+      <div class="review-stars">${stars}</div>
+      <p class="body">${escapeHTML(r.texte)}</p>
+      <div class="review-footer">
+        ${r.motif ? `<span class="review-tag">${escapeHTML(r.motif)}</span>` : "<span></span>"}
+        <button type="button" class="delete-review-btn" data-id="${escapeHTML(r.id)}" data-confirming="false" title="Supprimer mon avis">🗑️ Supprimer</button>
+      </div>
+    `;
+        return wrapper;
+      }
+
+      async function supprimerAvis(id) {
+        const reviews = (await chargerAvis()).filter((r) => r.id !== id);
+        await sauvegarderAvis(reviews);
+        await afficherAvis();
+      }
+
+      const CLE_STOCKAGE = "lpm_avis";
+
+      function storageClaudeDisponible() {
+        return (
+          typeof window.storage !== "undefined" &&
+          window.storage &&
+          typeof window.storage.get === "function" &&
+          typeof window.storage.set === "function"
+        );
+      }
+
+      async function lireStockageBrut() {
+        if (storageClaudeDisponible()) {
+          try {
+            const res = await window.storage.get(CLE_STOCKAGE, true);
+            return res && res.value ? res.value : null;
+          } catch (e) {
+            // la clé n'existe pas encore, ou erreur de stockage : on repart de zéro
+            return null;
+          }
+        }
+        try {
+          return localStorage.getItem(CLE_STOCKAGE);
+        } catch (e) {
+          console.error("localStorage indisponible :", e);
+          return null;
+        }
+      }
+
+      async function ecrireStockageBrut(json) {
+        if (storageClaudeDisponible()) {
+          await window.storage.set(CLE_STOCKAGE, json, true);
+          return;
+        }
+        localStorage.setItem(CLE_STOCKAGE, json);
+      }
+
+      async function chargerAvis() {
+        try {
+          const brut = await lireStockageBrut();
+          const reviews = brut ? JSON.parse(brut) : [];
+          reviews.sort((a, b) => b.date - a.date);
+          return reviews;
+        } catch (e) {
+          console.error("Erreur de chargement des avis :", e);
+          return [];
+        }
+      }
+
+      async function sauvegarderAvis(reviews) {
+        await ecrireStockageBrut(JSON.stringify(reviews));
+      }
+
+      function majEnTete(reviews) {
+        const total = NB_AVIS_INITIAUX + reviews.length;
+        let moyenne = NOTE_MOYENNE_INITIALE;
+        if (reviews.length) {
+          const sommeInitiale = NOTE_MOYENNE_INITIALE * NB_AVIS_INITIAUX;
+          const sommeNouvelle = reviews.reduce((acc, r) => acc + (r.note || 5), 0);
+          moyenne = (sommeInitiale + sommeNouvelle) / total;
+        }
+        document.getElementById("avg-score").textContent =
+          moyenne.toFixed(1).replace(".", ",") + "/5";
+        document.getElementById("review-count").textContent = "· " + total + " avis";
+      }
+
+      async function afficherAvis() {
+        const reviews = await chargerAvis();
+        document.querySelectorAll(".review-card.dynamic").forEach((el) => el.remove());
+        reviews.forEach((r) => grid.prepend(reviewCardEl(r)));
+        majEnTete(reviews);
+      }
+
+      afficherAvis();
+
+      grid.addEventListener("click", async function (e) {
+        const btn = e.target.closest(".delete-review-btn");
+        if (!btn) return;
+
+        if (btn.dataset.confirming === "true") {
+          btn.disabled = true;
+          btn.textContent = "Suppression...";
+          try {
+            await supprimerAvis(btn.dataset.id);
+          } catch (err) {
+            console.error("Erreur de suppression :", err);
+            btn.disabled = false;
+            btn.textContent = "🗑️ Supprimer";
+            btn.dataset.confirming = "false";
+          }
+          return;
+        }
+
+        // Repasse tous les autres boutons en état normal
+        grid.querySelectorAll(".delete-review-btn.confirming").forEach((b) => {
+          b.classList.remove("confirming");
+          b.textContent = "🗑️ Supprimer";
+          b.dataset.confirming = "false";
+          clearTimeout(Number(b.dataset.timeoutId));
+        });
+
+        btn.classList.add("confirming");
+        btn.dataset.confirming = "true";
+        btn.textContent = "⚠️ Confirmer ?";
+
+        const timeoutId = setTimeout(() => {
+          btn.classList.remove("confirming");
+          btn.textContent = "🗑️ Supprimer";
+          btn.dataset.confirming = "false";
+        }, 3000);
+        btn.dataset.timeoutId = timeoutId;
+      });
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const noteInput = form.querySelector('input[name="note"]:checked');
+        const review = {
+          nom: document.getElementById("parent-nom").value.trim(),
+          enfant: document.getElementById("enfant-info").value.trim(),
+          motif: document.getElementById("motif").value,
+          texte: document.getElementById("avis-texte").value.trim(),
+          note: noteInput ? parseInt(noteInput.value, 10) : 5,
+          date: Date.now(),
+          id: Date.now() + "-" + Math.random().toString(36).slice(2, 8),
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours...";
+        confirmMsg.classList.remove("show", "error");
+
+        try {
+          const reviews = await chargerAvis();
+          reviews.push(review);
+          await sauvegarderAvis(reviews);
+
+          await afficherAvis();
+
+          confirmText.textContent = "Merci pour votre retour, il vient d'être publié !";
+          confirmMsg.classList.add("show");
+          submitBtn.textContent = "Avis envoyé ✓";
+
+          form.reset();
+          document.getElementById("n5").checked = true;
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Envoyer mon avis 💌";
+          }, 2500);
+        } catch (err) {
+          console.error(err);
+          confirmText.textContent = "Une erreur est survenue, merci de réessayer.";
+          confirmMsg.classList.add("show", "error");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Envoyer mon avis 💌";
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
