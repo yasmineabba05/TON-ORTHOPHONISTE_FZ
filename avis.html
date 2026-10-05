@@ -13,14 +13,7 @@
     <link rel="stylesheet" href="avis.css" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="apple-touch-icon" href="favicon.svg" />
-    <script>
-      // Écran de chargement : affiché une seule fois, à l'ouverture du site (visite en cours)
-      try {
-        if (!sessionStorage.getItem("loadingShown")) {
-          window.location.replace("loading.html?next=" + location.pathname.split("/").pop());
-        }
-      } catch (e) {}
-    </script>
+   
   </head>
   <body>
     <header>
