@@ -14,14 +14,6 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="apple-touch-icon" href="favicon.svg" />
     <link rel="stylesheet" href="contact.css" />
-    <script>
-      // Écran de chargement : affiché une seule fois, à l'ouverture du site (visite en cours)
-      try {
-        if (!sessionStorage.getItem("loadingShown")) {
-          window.location.replace("loading.html?next=" + location.pathname.split("/").pop());
-        }
-      } catch (e) {}
-    </script>
   </head>
   <body>
     <header>
@@ -143,28 +135,6 @@
     </div>
   </fieldset>
 
-  <fieldset>
-    <legend>🗓️ Vos disponibilités</legend>
-    <div class="field">
-      <label for="date">Date souhaitée</label>
-      <input type="date" id="date" name="date" />
-    </div>
-    <div class="slot-group" role="radiogroup" aria-label="Moment de la journée">
-      <div class="slot">
-        <input type="radio" name="moment" id="m1" value="Matin" />
-        <label class="slot-label" for="m1">Matin</label>
-      </div>
-      <div class="slot">
-        <input type="radio" name="moment" id="m2" value="Après-midi" />
-        <label class="slot-label" for="m2">Après-midi</label>
-      </div>
-      <div class="slot">
-        <input type="radio" name="moment" id="m3" value="Fin de journée" />
-        <label class="slot-label" for="m3">Fin de journée</label>
-      </div>
-    </div>
-  </fieldset>
-
   <div class="submit-row">
     <button type="submit" class="btn-primary" id="submit-btn">Envoyer ma demande</button>
     <span class="form-note">Réponse sous 24h ouvrées.</span>
@@ -200,7 +170,7 @@
             <div class="card highlight-card">
               <h3>💡 Bon à savoir</h3>
               <p>
-                Le premier rendez-vous (bilan) dure environ 45 minutes. Pensez à apporter le dernier
+                Le premier rendez-vous dure environ 30 minutes. Pensez à apporter le dernier
                 bulletin scolaire et un éventuel avis médical.
               </p>
             </div>
