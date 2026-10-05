@@ -833,3 +833,15 @@ footer {
 .cta-section {
   padding: 20px 0 90px;
 }
+
+/* Image du hero (remplace la mascotte lapin) */
+img.mascotte {
+  width: 320px;
+  max-width: 90%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 38% 62% 55% 45% / 45% 40% 60% 55%;
+  border: 4px solid var(--white);
+  box-shadow: 0 14px 30px rgba(91, 66, 88, 0.18);
+}
