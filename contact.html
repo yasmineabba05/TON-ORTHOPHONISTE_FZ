@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prendre rendez-vous — Les Petits Mots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo"><span class="dot"></span>Les Petits Mots</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="accompagnements.html">Ce que nous travaillons</a></li>
+          <li><a href="apropos.html">L'orthophoniste</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="contact.html" class="nav-cta-mobile active">Prendre rendez-vous</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="contact.html" class="nav-cta active">Prendre rendez-vous</a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="eyebrow"><span>📅</span> Réservation en ligne</div>
+          <h1>On prend <span class="swirl">rendez-vous</span> ensemble ?</h1>
+          <p>
+            Remplissez le formulaire ci-dessous : je vous recontacte sous 24h ouvrées pour confirmer
+            le créneau. Le premier échange est sans engagement.
+          </p>
+          <div class="float-deco fd2">💛 sans stress</div>
+        </div>
+      </section>
+
+      <!-- FORMULAIRE + INFOS -->
+      <section class="rdv-section">
+        <div class="container rdv-grid">
+          <!-- FORMULAIRE -->
+          <div class="card form-card">
+            <h2>Vos informations</h2>
+            <p class="sub">Quelques infos pour préparer au mieux la première rencontre.</p>
+
+           <form id="rdv-form" novalidate>
+  <fieldset>
+    <legend>👨‍👩‍👧 Vous</legend>
+    <div class="field-row">
+      <div class="field">
+        <label for="parent-nom">Nom et prénom</label>
+        <input type="text" id="parent-nom" name="parent-nom" placeholder="Ex. Camille Dupont" required />
+      </div>
+      <div class="field">
+        <label for="parent-tel">Téléphone</label>
+        <input type="tel" id="parent-tel" name="parent-tel" placeholder="06 12 34 56 78" required />
+      </div>
+    </div>
+    <div class="field">
+      <label for="parent-email">E-mail <small>(facultatif)</small></label>
+      <input type="email" id="parent-email" name="parent-email" placeholder="Ex. camille@gmail.com" autocomplete="email" />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>🧒 L'enfant</legend>
+    <div class="field-row">
+      <div class="field">
+        <label for="enfant-prenom">Prénom</label>
+        <input type="text" id="enfant-prenom" name="enfant-prenom" placeholder="Ex. Lina" required />
+      </div>
+      <div class="field">
+        <label>Âge</label>
+        <div class="chip-group" role="radiogroup" aria-label="Âge de l'enfant">
+          <div class="chip">
+            <input type="radio" name="age" id="age1" value="3-5 ans" required />
+            <label class="chip-label" for="age1">3-5 ans</label>
+          </div>
+          <div class="chip">
+            <input type="radio" name="age" id="age2" value="6-8 ans" />
+            <label class="chip-label" for="age2">6-8 ans</label>
+          </div>
+          <div class="chip">
+            <input type="radio" name="age" id="age3" value="9-12 ans" />
+            <label class="chip-label" for="age3">9-12 ans</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>💬 Le motif de la consultation</legend>
+    <div class="field">
+      <label for="motif">Quelle difficulté observez-vous ?</label>
+      <select id="motif" name="motif" required>
+        <option value="" disabled selected>Choisissez un motif</option>
+        <option>Articulation / prononciation</option>
+        <option>Langage oral</option>
+        <option>Lecture &amp; écriture</option>
+        <option>Bégaiement</option>
+        <option>Confiance en soi à l'oral</option>
+        <option>Je ne sais pas encore</option>
+      </select>
+    </div>
+    <div class="field full">
+      <label for="message">Décrivez en quelques mots</label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        placeholder="Ex. Mon fils confond certains sons, l'école nous a conseillé de consulter..."
+      ></textarea>
+    </div>
+  </fieldset>
+
+  <div class="submit-row">
+    <button type="submit" class="btn-primary" id="submit-btn">Envoyer ma demande</button>
+    <span class="form-note">Réponse sous 24h ouvrées.</span>
+  </div>
+
+  <div class="confirm-msg" id="confirm-msg">
+    <span>🎉</span>
+    <span>Merci ! Votre demande a bien été envoyée, je reviens vers vous très vite.</span>
+  </div>
+</form>
+          </div>
+
+          <!-- COLONNE INFOS -->
+          <div class="side-col">
+            <div class="card info-card">
+              <h3>Le cabinet</h3>
+              <div class="info-list">
+                <div class="info-item">
+                  <div class="info-icon">📍</div>
+                  <div><strong>Adresse</strong><span>CASABLANCA</span></div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon">📞</div>
+                  <div><strong>Téléphone</strong><span>+212 783-083330</span></div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon">🕘</div>
+                  <div><strong>Horaires</strong><span>Lun-Ven, 9h-18h</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card highlight-card">
+              <h3>💡 Bon à savoir</h3>
+              <p>
+                Le premier rendez-vous dure environ 30 minutes. Pensez à apporter le dernier
+                bulletin scolaire et un éventuel avis médical.
+              </p>
+            </div>
+
+            <div class="card faq-card">
+              <h3>Questions fréquentes</h3>
+              <details>
+                <summary>Faut-il une ordonnance ?</summary>
+                <p>
+                  Une prescription médicale est recommandée pour le remboursement, mais un premier
+                  échange sans ordonnance est possible.
+                </p>
+              </details>
+              <details>
+                <summary>Puis-je annuler un rendez-vous ?</summary>
+                <p>Oui, merci de prévenir au moins 24h à l'avance par téléphone ou e-mail.</p>
+              </details>
+              <details>
+                <summary>Êtes-vous conventionné(e) ?</summary>
+                <p>
+                  Oui, les séances sont prises en charge par l'Assurance Maladie sur prescription.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <h4>Les Petits Mots 🐰</h4>
+            <p>Cabinet d'orthophonie pour enfants, un espace doux pour apprendre à s'exprimer.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Cabinet</h4>
+            <a href="index.html">Accueil</a>
+            <a href="accompagnements.html">Ce que nous travaillons</a>
+            <a href="apropos.html">L'orthophoniste</a>
+            <a href="avis.html">Avis</a>
+            <a href="contact.html">Rendez-vous</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+
+            <!-- WhatsApp -->
+            <a
+              class="contact-item"
+              href="https://wa.me/212783083330"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.483.709.315 1.262.494 1.693.63.711.227 1.358.195 1.871.12.571-.09 1.758-.72 2.006-1.41.248-.69.248-1.289.173-1.41-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </span>
+              <span class="contact-text">+212 783-083330</span>
+            </a>
+
+            <!-- Email -->
+            <a class="contact-item" href="mailto:benmlihfzfz@gmail.com" aria-label="Email">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="3" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <span class="contact-text">benmlihfzfz@gmail.com</span>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              class="contact-item"
+              href="https://www.instagram.com/ton_orthophoniste_fz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.248.637.416 1.363.465 2.428.05 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.248-1.363.416-2.428.465-1.066.05-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.416-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.637-.248 1.363-.416 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.059-.976.045-1.505.207-1.858.344-.466.181-.8.398-1.15.748-.35.35-.567.684-.748 1.15-.137.353-.3.882-.344 1.858-.05 1.054-.06 1.37-.06 4.04 0 2.67.01 2.986.06 4.04.045.976.207 1.505.344 1.858.181.466.398.8.748 1.15.35.35.684.567 1.15.748.353.137.882.3 1.858.344 1.054.05 1.37.06 4.04.06 2.67 0 2.987-.01 4.04-.06.976-.045 1.505-.207 1.858-.344.466-.181.8-.398 1.15-.748.35-.35.567-.684.748-1.15.137-.353.3-.882.344-1.858.05-1.054.06-1.37.06-4.04 0-2.67-.01-2.986-.06-4.04-.045-.976-.207-1.505-.344-1.858a3.09 3.09 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.858-.344-1.053-.05-1.37-.059-4.04-.059zm0 4.594a5.604 5.604 0 1 1 0 11.208 5.604 5.604 0 0 1 0-11.208zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5.844-9.884a1.31 1.31 0 1 1-2.62 0 1.31 1.31 0 0 1 2.62 0z" />
+                </svg>
+              </span>
+              <span class="contact-text">Instagram</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              class="contact-item"
+              href="https://www.linkedin.com/in/fatima-zahra-benmlih-a8884743a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </span>
+              <span class="contact-text">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Les Petits Mots — tous droits réservés</span>
+          <span>Fait avec 💛 pour les petites voix</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const form = document.getElementById("rdv-form");
+        const submitBtn = document.getElementById("submit-btn");
+        const confirmMsg = document.getElementById("confirm-msg");
+        const dateInput = document.getElementById("date");
+
+        // wa.me n'accepte que des chiffres : pas de "+", d'espaces ni de tirets
+        const whatsappNumber = "212783083330";
+        const labelBouton = "Envoyer ma demande";
+
+        // Empêche de choisir une date passée (date locale, pas UTC)
+        if (dateInput) {
+          const d = new Date();
+          const pad = (n) => String(n).padStart(2, "0");
+          dateInput.min = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+        }
+
+        const valeur = (id, defaut) => {
+          const el = document.getElementById(id);
+          return (el && el.value.trim()) || defaut;
+        };
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Ouverture de WhatsApp...";
+
+          const nom = valeur("parent-nom", "");
+          const tel = valeur("parent-tel", "");
+          const email = valeur("parent-email", "Non renseigné");
+          const enfant = valeur("enfant-prenom", "");
+          const ageChoisi = form.querySelector('input[name="age"]:checked');
+          const age = ageChoisi ? ageChoisi.value : "Non renseigné";
+          const motif = valeur("motif", "");
+          const dateBrute = valeur("date", "");
+          const date = dateBrute ? dateBrute.split("-").reverse().join("/") : "Non renseignée";
+          const momentChoisi = form.querySelector('input[name="moment"]:checked');
+          const moment = momentChoisi ? momentChoisi.value : "Non renseigné";
+          const message = valeur("message", "Aucun");
+
+          const texte =
+            "📅 *DEMANDE DE RENDEZ-VOUS*\n\n" +
+            "👨‍👩‍👧 *Parent*\n" +
+            "• Nom : " + nom + "\n" +
+            "• Téléphone : " + tel + "\n" +
+            "• E-mail : " + email + "\n\n" +
+            "🧒 *Enfant*\n" +
+            "• Prénom : " + enfant + "\n" +
+            "• Âge : " + age + "\n\n" +
+            "🗓️ *Disponibilités*\n" +
+            "• Date souhaitée : " + date + "\n" +
+            "• Moment : " + moment + "\n\n" +
+            "💬 *Motif*\n" + motif + "\n\n" +
+            "📝 *Message*\n" + message + "\n\n" +
+            "✉️ Envoyé via le formulaire du site";
+
+          const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(texte);
+
+          // Ouvre WhatsApp ; si le navigateur bloque la nouvelle fenêtre, on redirige dans l'onglet
+          const w = window.open(url, "_blank", "noopener");
+          if (!w) {
+            window.location.href = url;
+          }
+
+          if (confirmMsg) confirmMsg.classList.add("show");
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = labelBouton;
+        });
+      })();
+    </script>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      function fermerMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      }
+
+      function ouvrirMenu() {
+        navLinks.classList.add("open");
+        menuToggle.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Fermer le menu");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        if (navLinks.classList.contains("open")) {
+          fermerMenu();
+        } else {
+          ouvrirMenu();
+        }
+      });
+
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", fermerMenu);
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          fermerMenu();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) {
+          fermerMenu();
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
