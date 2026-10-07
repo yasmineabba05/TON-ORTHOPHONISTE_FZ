@@ -19,31 +19,27 @@
     <header>
       <nav>
         <a href="index.html" class="logo"><span class="dot"></span>Les Petits Mots</a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html" class="active">Accueil</a></li>
           <li><a href="accompagnements.html">Ce que nous travaillons</a></li>
           <li><a href="apropos.html">L'orthophoniste</a></li>
           <li><a href="avis.html">Avis</a></li>
+          <li><a href="contact.html" class="nav-cta-mobile">Rendez-vous</a></li>
         </ul>
-        <a href="contact.html" class="nav-cta">Rendez-vous</a>
-        <button
-          class="burger"
-          id="burger"
-          aria-label="Ouvrir le menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
+        <div class="nav-right">
+          <a href="contact.html" class="nav-cta">Rendez-vous</a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </nav>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="index.html">Accueil</a>
-
-        <a href="accompagnements.html">Ce que nous travaillons</a>
-        <a href="apropos.html">L'orthophoniste</a>
-        <a href="avis.html">Avis</a>
-        <a href="contact.html" class="nav-cta">Rendez-vous</a>
-      </div>
     </header>
 
     <main>
@@ -348,23 +344,46 @@
     </footer>
 
     <script>
-      (function () {
-        const burger = document.getElementById("burger");
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (!burger || !mobileMenu) return;
-        burger.addEventListener("click", function () {
-          const isOpen = mobileMenu.classList.toggle("open");
-          burger.classList.toggle("open", isOpen);
-          burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-        mobileMenu.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            mobileMenu.classList.remove("open");
-            burger.classList.remove("open");
-            burger.setAttribute("aria-expanded", "false");
-          });
-        });
-      })();
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      function fermerMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      }
+
+      function ouvrirMenu() {
+        navLinks.classList.add("open");
+        menuToggle.classList.add("open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Fermer le menu");
+      }
+
+      menuToggle.addEventListener("click", function () {
+        if (navLinks.classList.contains("open")) {
+          fermerMenu();
+        } else {
+          ouvrirMenu();
+        }
+      });
+
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", fermerMenu);
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          fermerMenu();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) {
+          fermerMenu();
+        }
+      });
     </script>
     <script src="script.js"></script>
   </body>
