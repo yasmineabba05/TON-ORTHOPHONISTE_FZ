@@ -121,7 +121,9 @@ nav {
   border-radius: 3px;
   transition: width 0.25s ease;
 }
-.nav-links a:hover::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
 .nav-links a.active::after {
   width: 100%;
 }
@@ -136,10 +138,15 @@ nav {
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
+  white-space: nowrap;
 }
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 0 #3d2c3b;
+}
+.nav-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #3d2c3b;
 }
 
 .nav-right {
