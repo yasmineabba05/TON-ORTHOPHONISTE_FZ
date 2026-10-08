@@ -55,7 +55,7 @@
           <div class="score-row">
             <div class="score-pill">
               <span class="num" id="avg-score">4,9/5</span>
-              <span class="stars">★★★★★</span>
+              <span class="stars" id="avg-stars" aria-hidden="true">★★★★★</span>
               <span class="count" id="review-count">· 120 avis</span>
             </div>
           </div>
@@ -519,6 +519,11 @@
         document.getElementById("avg-score").textContent =
           moyenne.toFixed(1).replace(".", ",") + "/5";
         document.getElementById("review-count").textContent = "· " + total + " avis";
+
+        // Étoiles du résumé : arrondi de la moyenne (ex. 4,9 → 5 ★, 4,4 → 4 ★ + 1 ☆)
+        const pleines = Math.max(0, Math.min(5, Math.round(moyenne)));
+        document.getElementById("avg-stars").textContent =
+          "★".repeat(pleines) + "☆".repeat(5 - pleines);
       }
 
       async function afficherAvis() {
